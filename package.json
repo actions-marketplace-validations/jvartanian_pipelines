@@ -2,7 +2,7 @@
   "name": "azurepipeline",
   "version": "1.0.0",
   "description": "Trigger Azure pipeline release",
-  "main": "lib/main.js",
+  "main": "lib/index.js",
   "dependencies": {
     "@actions/core": "^1.2.6",
     "@types/q": "^1.5.2"
