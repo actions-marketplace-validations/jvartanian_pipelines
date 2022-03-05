@@ -15,6 +15,7 @@ export class PipelineRunner {
     readonly branch = p.processEnv("GITHUB_REF");
     readonly commitId = p.processEnv("GITHUB_SHA");
     readonly githubRepo = "GitHub";
+    readonly githubEnterpriseRepo = "GitHubEnterprise";
 
     constructor(taskParameters: TaskParameters) {
         this.taskParameters = taskParameters
@@ -74,7 +75,7 @@ export class PipelineRunner {
         let sourceVersion = null;
 
         // If definition is linked to existing github repo, pass github source branch and source version to build
-        if (p.equals(repositoryId, this.repository) && p.equals(repositoryType, this.githubRepo)) {
+        if (p.equals(repositoryId, this.repository) && (p.equals(repositoryType, this.githubRepo) || p.equals(repositoryType, this.githubEnterpriseRepo))) {
             core.debug("pipeline is linked to same Github repo");
             sourceBranch = this.branch,
                 sourceVersion = this.commitId
