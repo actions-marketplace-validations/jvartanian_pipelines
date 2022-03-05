@@ -1,5 +1,5 @@
-name: 'Azure Pipelines Action' 
-description: 'Trigger a run in Azure pipelines' 
+name: 'Azure Pipelines Action GHE' 
+description: 'Trigger a run in Azure pipelines. It can handle either Github or GHE linked repos' 
 inputs:
   azure-devops-project-url:
     description: 'Fullyqualified URL to the Azure DevOps organization along with project name(eg, https://dev.azure.com/organization/project-name or https://server.example.com:8080/tfs/DefaultCollection/project-name)' 
